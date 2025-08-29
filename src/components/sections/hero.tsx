@@ -9,7 +9,7 @@ export function HeroSection() {
       <div className="mx-auto max-w-4xl">
         <div className="mb-8">
           <h1 className="mb-4 text-5xl font-bold tracking-tight text-balance">
-            Hey, I'm <span className="text-primary">{siteConfig.name}</span>
+            Hey, I&apos;m <span className="text-primary">{siteConfig.name}</span>
           </h1>
           <p className="text-xl text-muted-foreground text-balance">
             {siteConfig.tagline}
