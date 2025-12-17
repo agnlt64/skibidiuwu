@@ -8,9 +8,9 @@ export type Config = {
 }
 
 export const siteConfig: Config = {
-  name: "Antonin",
-  tagline: "Software Engineer • Chess Enthusiast • Manga Lover",
-  description: "Personal website of agnlt64 - a passionate software engineer, chess player, and manga enthusiast.",
+  name: "agnlt64",
+  tagline: "Software Engineer • Chess Player",
+  description: "Personal website of agnlt64 - a passionate software engineer and chess player.",
   url: "https://skibidiuwu.org",
   footer: "© 2025 skibidiuwu.org • Built with passion and lots of guinness"
 }
@@ -24,7 +24,6 @@ export type NavItem = {
 export const navigation: NavItem[] = [
   { name: "Programming", href: "#programming", icon: "Code" },
   { name: "Chess", href: "#chess", icon: "Crown" },
-  { name: "Manga", href: "#manga", icon: "BookOpen" },
   { name: "Electronics", href: "#electronics", icon: "Zap" }
 ]
 
@@ -52,13 +51,6 @@ export const aboutCards: AboutCard[] = [
     icon: "Crown"
   },
   {
-    id: "manga",
-    title: "Manga",
-    description: "Immersed in storytelling through art, exploring diverse narratives and styles.",
-    content: "From slice-of-life to epic adventures, manga offers unique perspectives and incredible artistic expression that inspires my creativity.",
-    icon: "BookOpen"
-  },
-  {
     id: "electronics",
     title: "Electronics",
     description: "Building and tinkering with hardware, from microcontrollers to embedded systems.",
@@ -76,7 +68,7 @@ export type Education = {
 }
 
 export const education: Education = {
-  degree: "Computer Science",
+  degree: "Bachelor in Computer Science",
   institution: "IUT informatique d'Amiens",
   graduation: "Expected Graduation 2027",
   description: "Focusing on software engineering, algorithms, and system design. Currently maintaining a strong GPA while working on various personal projects and contributing to open source.",
@@ -93,7 +85,7 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Languages",
     icon: "Code",
-    skills: ["C", "C++", "Python", "Go", "HTML", "CSS", "JavaScript"]
+    skills: ["C", "C++", "Python", "Go", "HTML", "CSS", "TypeScript"]
   },
   {
     title: "Frontend",
@@ -113,7 +105,7 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Tools & Platforms",
     icon: "Wrench",
-    skills: ["Git", "GitHub", "VS Code", "Visual Studio", "GitHub Copilot", "uv"]
+    skills: ["Git", "GitHub", "VS Code", "Visual Studio", "Figma", "GitHub Copilot"]
   },
   {
     title: "Operating Systems",
@@ -143,11 +135,11 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Python Search Engine",
-    description: "A custom search engine that indexes a Python codebase.",
-    content: "Parses your codebase using Python's native AST module and indexes all of the functions. The results are displayed in a user-friendly web export type.",
-    technologies: ["Python", "Flask", "JavaScript"],
-    href: "https://github.com/agnlt64/PPI"
+    title: "GoUPJV",
+    description: "A carpooling app for my university.",
+    content: "A group project for my university. It allows students to find carpooling partners for their university classes. It is currently in development.",
+    technologies: ["Python", "Flask", "SQLite", "HTML", "Tailwind", "JavaScript"],
+    href: "https://github.com/agnlt64/go-upjv",
   },
   {
     title: "GoGPT",
@@ -155,6 +147,27 @@ export const projects: Project[] = [
     content: "A terminal-based client for interacting with ChatGPT, designed for quick and efficient conversations. The TUI is made using various Go libraries to ensure a smooth user experience.",
     technologies: ["Go", "OpenAI's API"],
     href: "https://github.com/agnlt64/go-gpt"
+  },
+  {
+    title: "C everyday",
+    description: "Programming various algorithms in C everyday.",
+    content: "I created this repository to practice C programming by implementing various algorithms and data structures. It's a great way to improve my coding skills and learn new techniques. I uploaded a new video every day on my YouTube channel. I chose to stop because I was going insane.",
+    technologies: ["C", "Raylib"],
+    href: "https://github.com/agnlt64/c-everyday"
+  },
+  {
+    title: "Meta React",
+    description: "A programming language that compiles to Next.js code.",
+    content: "Meta React is a new programming language designed to simplify the development of Next.js applications. It is focused on Static Site Generation (SSG) and offers a more intuitive syntax.",
+    technologies: ["TypeScript", "Next.js"],
+    href: "https://github.com/agnlt64/meta-react",
+  },
+  {
+    title: "Python Search Engine",
+    description: "A custom search engine that indexes a Python codebase.",
+    content: "Parses your codebase using Python's native AST module and indexes all of the functions. The results are displayed in a user-friendly web export type.",
+    technologies: ["Python", "Flask", "JavaScript"],
+    href: "https://github.com/agnlt64/PPI"
   },
   {
     title: "Journal",
@@ -171,21 +184,6 @@ export const projects: Project[] = [
     technologies: ["Next.js", "Tailwind CSS", "shadcn"],
     href: "https://skibidiuwu.org"
   },
-  {
-    title: "C everyday",
-    description: "Programming various algorithms in C everyday.",
-    content: "I created this repository to practice C programming by implementing various algorithms and data structures. It's a great way to improve my coding skills and learn new techniques. I uploaded a new video every day on my YouTube channel. I chose to stop because I was going insane.",
-    technologies: ["C", "Raylib"],
-    href: "https://github.com/agnlt64/c-everyday"
-  },
-  {
-    title: "Meta React",
-    description: "A programming language that compiles to Next.js code.",
-    content: "Meta React is a new programming language designed to simplify the development of Next.js applications. It is focused on Static Site Generation (SSG) and offers a more intuitive syntax.",
-    technologies: ["TypeScript", "Next.js"],
-    href: "#",
-    private: true
-  }
 ]
 
 export type SocialLink = {
@@ -209,11 +207,6 @@ export const socialLinks: SocialLink[] = [
     name: "Discord",
     icon: "MessageCircle",
     href: "https://discord.com/users/775767274774462484"
-  },
-  {
-    name: "Chess.com",
-    icon: "Crown",
-    href: "https://www.chess.com/members/agnlt64"
   },
   {
     name: "GitHub",

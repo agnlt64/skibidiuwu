@@ -9,14 +9,33 @@ import { SocialsSection } from "@/components/sections/socials"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-pink-900">
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Multi-layer gradient background */}
+      <div
+        className="fixed inset-0 -z-10"
+        style={{
+          background: `
+            radial-gradient(ellipse 80% 50% at 50% -20%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 40% at 100% 50%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+            radial-gradient(ellipse 60% 40% at 0% 80%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
+            linear-gradient(to bottom, #050505 0%, #0a0a0a 50%, #050505 100%)
+          `
+        }}
+      />
+
+      {/* Noise texture overlay */}
+      <div className="noise-overlay" />
+
+      {/* Main content */}
       <Header />
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <EducationSection />
-      <ProjectsSection />
-      <SocialsSection />
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <EducationSection />
+        <ProjectsSection />
+        <SocialsSection />
+      </main>
       <Footer />
     </div>
   )

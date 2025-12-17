@@ -1,15 +1,65 @@
+"use client"
+
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
 export function Header() {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <header className="absolute top-0 left-0 p-6 z-10">
-      <Link href="/" className="block">
-        <h1 className="text-2xl font-bold">
-          <span className="text-white">skibidi</span>
-          <span className="text-pink-500">uwu</span>
-          <span className="text-white">.org</span>
-        </h1>
-      </Link>
+    <header
+      className={`
+        fixed top-0 left-0 right-0 p-6 z-50
+        transition-all duration-500
+        ${scrolled ? 'glass-strong py-4' : 'bg-transparent'}
+      `}
+    >
+      <div className="max-w-6xl mx-auto flex items-center justify-between">
+        <Link href="/" className="block group">
+          <h1 className="text-2xl font-bold transition-all duration-300 group-hover:scale-105">
+            <span className="text-white transition-colors">skibidi</span>
+            <span className="text-pink-500 text-glow-pink transition-all duration-300 group-hover:text-glow-pink-strong">uwu</span>
+            <span className="text-white transition-colors">.org</span>
+          </h1>
+        </Link>
+
+        {/* Optional: Add nav links here for desktop */}
+        <nav className="hidden md:flex items-center gap-6">
+          <Link
+            href="#programming"
+            className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
+          >
+            About
+          </Link>
+          <Link
+            href="#skills"
+            className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
+          >
+            Skills
+          </Link>
+          <Link
+            href="#projects"
+            className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
+          >
+            Projects
+          </Link>
+          <Link
+            href="#socials"
+            className="px-4 py-2 text-sm font-medium rounded-full glass border border-pink-500/30 hover:border-pink-500/60 hover:glow-pink transition-all duration-300"
+          >
+            Contact
+          </Link>
+        </nav>
+      </div>
     </header>
   )
 }
